@@ -9,6 +9,10 @@
 </template>
 
 <style lang="scss">
+* {
+  font-family: 'Roboto', ;
+  font-family: 'Trade Winds', ;
+}
 #app {
   font-family: 'Avenir', Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;

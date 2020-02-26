@@ -841,6 +841,11 @@
   resolved "https://registry.npm.taobao.org/@types/events/download/@types/events-3.0.0.tgz#2862f3f58a9a7f7c3e78d79f130dd4d71c25c2a7"
   integrity sha1-KGLz9Yqaf3w+eNefEw3U1xwlwqc=
 
+"@types/geojson@*":
+  version "7946.0.7"
+  resolved "https://registry.yarnpkg.com/@types/geojson/-/geojson-7946.0.7.tgz#c8fa532b60a0042219cdf173ca21a975ef0666ad"
+  integrity sha512-wE2v81i4C4Ol09RtsWFAqg3BUitWbHSpSlIo+bNdsCJijO9sjme+zm+73ZMCa/qMC8UEERxzGbvmr1cffo2SiQ==
+
 "@types/glob@^7.1.1":
   version "7.1.1"
   resolved "https://registry.npm.taobao.org/@types/glob/download/@types/glob-7.1.1.tgz#aa59a1c6e3fbc421e07ccd31a944c30eba521575"
@@ -849,6 +854,13 @@
     "@types/events" "*"
     "@types/minimatch" "*"
     "@types/node" "*"
+
+"@types/leaflet@^1.2.11":
+  version "1.5.9"
+  resolved "https://registry.yarnpkg.com/@types/leaflet/-/leaflet-1.5.9.tgz#3e56efd5dab7c2d1f56200620939d11c973946c2"
+  integrity sha512-vFj2Y764lC6PpmmoFTui3yEMAKf+Dy08eGIaFgM+efJoKNxDP/bsEr2UHloP6kkJqc+4VO9+KYea2ZhiZCnNrQ==
+  dependencies:
+    "@types/geojson" "*"
 
 "@types/minimatch@*":
   version "3.0.3"
@@ -1529,6 +1541,13 @@ aws4@^1.8.0:
   version "1.9.1"
   resolved "https://registry.npm.taobao.org/aws4/download/aws4-1.9.1.tgz?cache=0&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2Faws4%2Fdownload%2Faws4-1.9.1.tgz#7e33d8f7d449b3f673cd72deb9abdc552dbe528e"
   integrity sha1-fjPY99RJs/ZzzXLeuavcVS2+Uo4=
+
+axios@^0.19.2:
+  version "0.19.2"
+  resolved "https://registry.yarnpkg.com/axios/-/axios-0.19.2.tgz#3ea36c5d8818d0d5f8a8a97a6d36b86cdc00cb27"
+  integrity sha512-fjgm5MvRHLhx+osE2xoekY70AhARk3a6hkN+3Io1jc00jtquGvxYlKlsFUhmUET0V5te6CcZI7lcv2Ym61mjHA==
+  dependencies:
+    follow-redirects "1.5.10"
 
 babel-loader@^8.0.6:
   version "8.0.6"
@@ -2657,6 +2676,13 @@ debug@2.6.9, debug@^2.2.0, debug@^2.3.3:
   dependencies:
     ms "2.0.0"
 
+debug@=3.1.0:
+  version "3.1.0"
+  resolved "https://registry.yarnpkg.com/debug/-/debug-3.1.0.tgz#5bb5a0672628b64149566ba16819e61518c67261"
+  integrity sha512-OX8XqP7/1a9cqkxYw2yXss15f26NKWBpDXQd0/uK/KPqdQhxbPa994hnzjcE2VqQpDslf55723cKPUOGSmMY3g==
+  dependencies:
+    ms "2.0.0"
+
 debug@^3.0.0, debug@^3.1.1, debug@^3.2.5:
   version "3.2.6"
   resolved "https://registry.npm.taobao.org/debug/download/debug-3.2.6.tgz#e83d17de16d8a7efb7717edbe5fb10135eee629b"
@@ -3377,6 +3403,13 @@ flush-write-stream@^1.0.0:
   dependencies:
     inherits "^2.0.3"
     readable-stream "^2.3.6"
+
+follow-redirects@1.5.10:
+  version "1.5.10"
+  resolved "https://registry.yarnpkg.com/follow-redirects/-/follow-redirects-1.5.10.tgz#7b7a9f9aea2fdff36786a94ff643ed07f4ff5e2a"
+  integrity sha512-0V5l4Cizzvqt5D44aTXbFZz+FtyXV1vrDN6qrelxtfYQKW0KO0W2T/hkE8xvGa/540LkZlkaUjO4ailYTFtHVQ==
+  dependencies:
+    debug "=3.1.0"
 
 follow-redirects@^1.0.0:
   version "1.10.0"
@@ -4562,10 +4595,20 @@ lcid@^2.0.0:
   dependencies:
     invert-kv "^2.0.0"
 
+leaflet.heat@^0.2.0:
+  version "0.2.0"
+  resolved "https://registry.yarnpkg.com/leaflet.heat/-/leaflet.heat-0.2.0.tgz#109d8cf586f0adee41f05aff031e27a77fecc229"
+  integrity sha1-EJ2M9Ybwre5B8Fr/Ax4np3/swik=
+
 leaflet.markercluster@^1.4.1:
   version "1.4.1"
   resolved "https://registry.yarnpkg.com/leaflet.markercluster/-/leaflet.markercluster-1.4.1.tgz#b53f2c4f2ca7306ddab1dbb6f1861d5e8aa6c5e5"
   integrity sha512-ZSEpE/EFApR0bJ1w/dUGwTSUvWlpalKqIzkaYdYB7jaftQA/Y2Jav+eT4CMtEYFj+ZK4mswP13Q2acnPBnhGOw==
+
+leaflet@1.3.1:
+  version "1.3.1"
+  resolved "https://registry.yarnpkg.com/leaflet/-/leaflet-1.3.1.tgz#86f336d2fb0e2d0ff446677049a5dc34cf0ea60e"
+  integrity sha512-adQOIzh+bfdridLM1xIgJ9VnJbAUY3wqs/ueF+ITla+PLQ1z47USdBKUf+iD9FuUA8RtlT6j6hZBfZoA6mW+XQ==
 
 leaflet@^1.6.0:
   version "1.6.0"
@@ -7724,6 +7767,11 @@ vm-browserify@^1.0.1:
   resolved "https://registry.npm.taobao.org/vm-browserify/download/vm-browserify-1.1.2.tgz#78641c488b8e6ca91a75f511e7a3b32a86e5dda0"
   integrity sha1-eGQcSIuObKkadfUR56OzKobl3aA=
 
+vue-axios@^2.1.5:
+  version "2.1.5"
+  resolved "https://registry.yarnpkg.com/vue-axios/-/vue-axios-2.1.5.tgz#1af4bf1218ed71309c76afb38d0f683e312c24a7"
+  integrity sha512-th5xVbInVoyIoe+qY+9GCflEVezxAvztD4xpFF39SRQYqpoKD2qkmX8yv08jJG9a2SgNOCjirjJGSwg/wTrbmA==
+
 vue-hot-reload-api@^2.3.0:
   version "2.3.4"
   resolved "https://registry.npm.taobao.org/vue-hot-reload-api/download/vue-hot-reload-api-2.3.4.tgz#532955cc1eb208a3d990b3a9f9a70574657e08f2"
@@ -7766,12 +7814,28 @@ vue-template-es2015-compiler@^1.9.0:
   resolved "https://registry.npm.taobao.org/vue-template-es2015-compiler/download/vue-template-es2015-compiler-1.9.1.tgz#1ee3bc9a16ecbf5118be334bb15f9c46f82f5825"
   integrity sha1-HuO8mhbsv1EYvjNLsV+cRvgvWCU=
 
+vue2-leaflet-heatmap@^1.0.5:
+  version "1.0.5"
+  resolved "https://registry.yarnpkg.com/vue2-leaflet-heatmap/-/vue2-leaflet-heatmap-1.0.5.tgz#c8a929b99ae33be880b5fa81a74025619a9f8596"
+  integrity sha512-NoHY1+AFe8pDrq91mjqiXXVanANC3EQZIDn0uPaDU8k234+d53R1FM8BxRV5YRpBvFbin38w32d9/S2BVp0G9Q==
+  dependencies:
+    leaflet.heat "^0.2.0"
+    vue2-leaflet "^1.1.1"
+
 vue2-leaflet-markercluster@^3.1.0:
   version "3.1.0"
   resolved "https://registry.yarnpkg.com/vue2-leaflet-markercluster/-/vue2-leaflet-markercluster-3.1.0.tgz#aec30b76846dc311bb5bd6ce63ec7eeabc3d9434"
   integrity sha512-v94tns6/PmBlFaPY2XvCUL69yUwRO43qYAP7T9hLmPDdu3Vgl15SDcC1qara8M56aNzWMPAcfP/uy4toUE5wcA==
   dependencies:
     leaflet.markercluster "^1.4.1"
+
+vue2-leaflet@^1.1.1:
+  version "1.2.3"
+  resolved "https://registry.yarnpkg.com/vue2-leaflet/-/vue2-leaflet-1.2.3.tgz#00ddeb9db4fb9a5e3b8f9c09cd97a4734366415e"
+  integrity sha512-dsmhswT6Xu2Nm59T64edvG0lpycSgIWQL3pUU7h6foP8QL+mSuT5gnhJGLO2mt+39w+HBTr4Rgz8bQvyELKVPA==
+  dependencies:
+    "@types/leaflet" "^1.2.11"
+    leaflet "1.3.1"
 
 vue2-leaflet@^2.4.2:
   version "2.4.2"

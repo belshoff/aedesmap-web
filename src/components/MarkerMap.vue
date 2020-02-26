@@ -19,6 +19,8 @@
   import iconUrl from 'leaflet/dist/images/marker-icon.png'
   import shadowUrl from 'leaflet/dist/images/marker-shadow.png'
 
+  import Services from '@/utils/services'
+
   function rand(n) {
     let max = n + 0.1
     let min = n - 0.1
@@ -26,6 +28,7 @@
   }
 
   export default {
+    mixins: [Services],
     components: {
       'v-map': Vue2Leaflet.LMap,
       'v-tilelayer': Vue2Leaflet.LTileLayer,
@@ -34,19 +37,8 @@
       'v-popup': Vue2Leaflet.LPopup,
       'v-marker-cluster': Vue2LeafletMarkercluster
     },
-    methods: {
-      click: (e) => console.log("clusterclick", e),
-      ready: (e) => console.log('ready', e),
-    },
     data () {
       let locations = []
-      for (let i = 0; i < 100; i++) {
-        locations.push({
-          id: i,
-          latlng: latLng(rand(-4.567198), rand(-37.791344)),
-          text: `Score: ${i * 1000}`
-        })
-      }
       let customicon = icon(Object.assign({},
         Icon.Default.prototype.options,
         {iconUrl, shadowUrl}
@@ -60,12 +52,48 @@
     },
     mounted() {
       setTimeout(() => {
-        console.log('done')
+        // console.log('done')
         this.$nextTick(() =>{
           this.clusterOptions = { disableClusteringAtZoom: 11 }
         });
       }, 5000);
-    }
+      this.init()
+    },
+    methods: {
+      click: (e) => console.log("clusterclick", e),
+      ready (e) {
+        // console.log('ready', e)
+      },
+      init () {
+
+        navigator.geolocation.getCurrentPosition(
+          pos => {
+            console.log("POS", pos)
+            // this.gettingLocation = false;
+            // this.location = pos;
+          },
+          err => {
+            console.error("Não pegou");
+            // this.gettingLocation = false;
+            // this.errorStr = err.message;
+          }
+        )
+
+        this.HttpGet('location').then(
+          res => {
+            let arr = []
+            res.body.forEach( ( el, i ) => {
+              arr.push({
+                id: i,
+                latlng: latLng(el.latitude, el.longitude),
+                text: `<label>ComFoco: ${el.score * 100}%</label><img style="height: 5%" src="${el.urlImage}" />`
+              })
+            });
+            this.locations = arr
+          }
+        )
+      }
+    },
   }
 </script>
 
