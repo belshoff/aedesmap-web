@@ -35,6 +35,6 @@
     "last 2 versions"
   ],
   "vue": {
-    "publicPath": "/aedesmap-web/static"
+    "publicPath": "/aedesmap-web/"
   }
 }
