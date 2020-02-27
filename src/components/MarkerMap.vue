@@ -86,7 +86,7 @@
               arr.push({
                 id: i,
                 latlng: latLng(el.latitude, el.longitude),
-                text: `<label>ComFoco: ${el.score * 100}%</label><img style="height: 5%" src="${el.urlImage}" />`
+                text: `<label>ComFoco: ${el.score * 100}%</label><img style="width: 100%" src="${el.urlImage}" />`
               })
             });
             this.locations = arr
