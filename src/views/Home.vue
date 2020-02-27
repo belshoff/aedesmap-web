@@ -1,7 +1,7 @@
 <template>
   <section class="container-fluid">
     <div id="header" class="row px-0 home-header">
-      <div class="col-md-12 col-lg-12 px-0 pt-1 text-left">
+      <div class="col-md-12 col-lg-12 pt-2 text-left">
         <h1>Aedes Map</h1>
       </div>
     </div>
