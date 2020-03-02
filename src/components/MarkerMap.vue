@@ -19,7 +19,7 @@
   import iconUrl from 'leaflet/dist/images/marker-icon.png'
   import shadowUrl from 'leaflet/dist/images/marker-shadow.png'
 
-  import Services from '@/utils/services'
+  import app from '@/utils/firebase'
 
   function rand(n) {
     let max = n + 0.1
@@ -28,7 +28,6 @@
   }
 
   export default {
-    mixins: [Services],
     components: {
       'v-map': Vue2Leaflet.LMap,
       'v-tilelayer': Vue2Leaflet.LTileLayer,
@@ -37,14 +36,28 @@
       'v-popup': Vue2Leaflet.LPopup,
       'v-marker-cluster': Vue2LeafletMarkercluster
     },
+    firebase: {
+      db_locations: app.database().ref('locations')
+    },
+    computed: {
+      locations () {
+        let arr = []
+        this.db_locations.forEach( ( el, i ) => {
+          arr.push({
+            id: i,
+            latlng: latLng(el.latitude, el.longitude),
+            text: `<label>ComFoco: ${el.score * 100}%</label><img style="width: 100%" src="${el.urlImage}" />`
+          })
+        });
+        return arr
+      }
+    },
     data () {
-      let locations = []
       let customicon = icon(Object.assign({},
         Icon.Default.prototype.options,
         {iconUrl, shadowUrl}
       ))
       return {
-        locations,
         icon: customicon,
         clusterOptions: {},
         initialLocation: latLng(-4.567198, -37.791344)
@@ -76,20 +89,6 @@
             console.error("Não pegou");
             // this.gettingLocation = false;
             // this.errorStr = err.message;
-          }
-        )
-
-        this.HttpGet('location').then(
-          res => {
-            let arr = []
-            res.body.forEach( ( el, i ) => {
-              arr.push({
-                id: i,
-                latlng: latLng(el.latitude, el.longitude),
-                text: `<label>ComFoco: ${el.score * 100}%</label><img style="width: 100%" src="${el.urlImage}" />`
-              })
-            });
-            this.locations = arr
           }
         )
       }
