@@ -1,9 +1,9 @@
 import React from 'react';
-import SimpleExample from './pages/SimpleExample'
+import MarkerCluster from './pages/MarkerCluster'
 
 function App() {
   return (
-    <SimpleExample />
+    <MarkerCluster />
   );
 }
 
